@@ -92,9 +92,48 @@ def gameLoop():
                 elif evento.key == pygame.K_DOWN:
                     x1_novo = 0
                     y1_novo = corpo_cobra
- 
-        if x1 >= comprimento or x1 < 0 or y1 >= altura or y1 < 0:
-            game_close = True
+
+        if x1 == comprimento:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key in (pygame.K_UP, pygame.K_DOWN):
+                    x1 = 0
+            else:
+                x1 = -10
+        elif x1 == -10:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key in (pygame.K_UP, pygame.K_DOWN):
+                    x1 = comprimento - 10
+            else:
+                x1 = comprimento
+        elif y1 == -10:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key in (pygame.K_RIGHT, pygame.K_LEFT):
+                    y1 = altura - 10
+            else:
+                y1 = altura
+        elif y1 == altura:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key in (pygame.K_RIGHT, pygame.K_LEFT):
+                    y1 = 0
+            else:
+                y1 = -10
+        elif y1 == 0:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_UP:
+                    y1 = altura
+        elif y1 == altura - 10:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_DOWN:
+                    y1 = -10
+        elif x1 == comprimento - 10:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_RIGHT:
+                    x1 = -10
+        elif x1 == 0:
+            if evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_LEFT:
+                    x1 = comprimento
+
 
         x1 += x1_novo
         y1 += y1_novo
