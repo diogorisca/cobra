@@ -1,3 +1,6 @@
+# Versão 2.1 (08/01/2023)
+  - Criação de um executável.
+
 # Versão 2.0 (07/01/2023)
 - Novas Implementações:
   - Aumento do tamanho da janela e objetos;
@@ -7,7 +10,7 @@
   - Aba dos pontos mais fancy;
   - Som ao comer a comida;
   - Novo modelo para Game Over com som;
-  - Possível movimentar a cobra com as setas ou com WASD
+  - Possível movimentar a cobra com as setas ou com WASD;
   - Velocidade altera aleatoriamente sempre que a cobra come;
 - Implementações Retiradas:
   - Executável retirado.
